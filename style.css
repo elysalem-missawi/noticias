@@ -1,0 +1,449 @@
+body {     
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .menu-hamburguesa {
+    position: relative;
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    text-align: right;
+    /* Alinea el icono a la derecha por defecto */
+  }
+
+  .menu-icono {
+    font-size: 2em;
+    cursor: pointer;
+    display: inline-block;
+    /* Asegura que ocupe el espacio necesario */
+  }
+  #menu-toggle {
+    display: none;
+    /* Oculta el checkbox */
+  }
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: blue;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s;
+    z-index: 10;
+  }
+
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    background-color: #0f118775;
+  }
+
+  /* Mostrar el menú cuando el checkbox está marcado */
+
+  :checked~.menu {
+    max-height: 400px;
+    /* Ajusta la altura máxima según la cantidad de elementos */
+  }
+
+  #menu-toggle:checked~.menu-icono::before {
+    content: '\2715';
+  }
+
+  .contenido-principal {
+    padding: 20px;
+    position: relative;  
+    top: 0; 
+    transition: top 0.5s ease-in-out;  
+  }
+
+  @media (min-width: 768px) {
+    .menu-hamburguesa {
+      display: none;
+    }
+
+    .desktop-menu {
+      display: block;
+      background-color: blue;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .desktop-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .desktop-menu li {
+      margin: 0 15px;
+    }
+
+    .desktop-menu a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  /* ////////////////header frnce 24////////////// */
+  header {
+    background-color: #e2d2cea1;
+    padding: 10px 0;
+    font-family: sans-serif;
+}
+  .header-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+}
+
+.navegacion-principal ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.navegacion-principal li {
+    margin-right: 20px;
+}
+
+.navegacion-principal a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navegacion-principal a:hover {
+    color: #007bff; /* Color de enlace al pasar el ratón */
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+}
+
+.fecha {
+    margin-right: 20px;
+    color: #777;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    background-color: #555;
+    color: white;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.redes-sociales a:hover {
+    background-color: #777;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header-contenedor {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navegacion-principal ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navegacion-principal li {
+        margin: 5px 0;
+    }
+
+    .header-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fecha {
+        margin: 5px 0;
+    }
+}
+ /*  ////////////////la cinta de noticias////////////// */
+ .cinta-noticias {
+    background-color: #f0f0f0;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    padding: 10px 0;
+}
+
+.noticias {
+    display: inline-block;
+    animation: desplazamiento 20s linear infinite; /* Animación de desplazamiento */
+}
+
+.noticias span {
+    margin-right: 30px; /* Espacio entre noticias */
+    font-size: 18px;
+    color: #333;
+}
+
+@keyframes desplazamiento {
+    0% {
+        transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina fuera de la pantalla a la izquierda */
+    }
+}
+
+/* /////////////// slider/////////////// */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ancho máximo del slider */
+    margin: 0 auto; /* Centrar el slider */
+    overflow: hidden;
+}
+
+.slider-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-imagen {
+    min-width: 100%;
+    position: relative;
+}
+
+.slider-imagen img {
+    width: 100%;
+    height: 400px; /* Altura fija de las imágenes */
+    object-fit: cover; /* Recortar y escalar las imágenes para llenar el contenedor */
+    display: block;
+}
+
+.slider-texto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+.slider-texto h3 {
+    margin: 0;
+}
+
+.slider-texto p {
+    margin: 10px 0 0;
+}
+
+.slider-anterior, .slider-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.slider-anterior {
+    left: 10px;
+}
+
+.slider-siguiente {
+    right: 10px;
+}
+
+/* /////////////// Main/////////////// */
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenido-principal {
+    flex: 2;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-principal h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contenido-principal .fecha-publicacion {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.imagen-principal {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-principal img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+aside {
+    flex: 1;
+    padding: 20px;
+}
+
+.noticias-relacionadas {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+aside li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+
+
+/*  ///////////////// footer///////////// */ 
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    font-family: sans-serif;
+}
+
+.footer-contenedor {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-columna {
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+.footer-columna h3 {
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+.footer-columna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-columna li {
+    margin-bottom: 5px;
+}
+
+.footer-columna a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-columna a:hover {
+    color: white;
+}
+
+.footer-columna.contacto p {
+    margin: 5px 0;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    background-color: #555;
+    color: white;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.redes-sociales a:hover {
+    background-color: #777;
+}
+
+.footer-derechos {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .footer-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-columna {
+        text-align: center;
+    }
+}
+ 

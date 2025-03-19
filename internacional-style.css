@@ -1,0 +1,39 @@
+/* ... (Estilos anteriores) ... */
+
+.pagina-internacional {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.noticias-destacadas, .noticias-regiones, .analisis-opinion {
+    margin-bottom: 30px;
+}
+
+.noticia-destacada {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.noticia-destacada img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.region {
+    margin-bottom: 20px;
+}
+
+.region ul {
+    list-style: none;
+    padding: 0;
+}
+
+.articulo-opinion {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
