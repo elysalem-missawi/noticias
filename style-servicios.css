@@ -1,0 +1,32 @@
+/* ... (Estilos anteriores) ... */
+
+.pagina-servicios {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.pagina-servicios h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.servicio {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.boton-contacto {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.boton-contacto:hover {
+    background-color: #0056b3;
+}
