@@ -1,116 +1,184 @@
-body {     
-    font-family: sans-serif;
+ /*
+ * Estilos Generales del Body
+ */
+
+ :root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    
+  
+     
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+body {
+    font-family: 'Nunito Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-  }
+    background-color: var(--white); /* Color de fondo principal */
+    line-height: 1.7;
+}
 
-  .desktop-menu {
+/*
+ * Estilos para el Menú de Escritorio
+ */
+.desktop-menu {
     display: none;
-  }
+        background-color: var(--indigo); 
 
-  .menu-hamburguesa {
+}
+
+/*
+ * Estilos para el Menú Hamburguesa
+ */
+.menu-hamburguesa {
     position: relative;
-    background-color:#777;
-    color: white;
+    background-color: var(--indigo); /* Fondo blanco */
+    ; /* Fondo blanco */
+    color: #581845;
     padding: 15px;
     text-align: right;
-    /* Alinea el icono a la derecha por defecto */
-  }
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
-  .menu-icono {
+.menu-icono {
     font-size: 2em;
     cursor: pointer;
     display: inline-block;
-    /* Asegura que ocupe el espacio necesario */
-  }
-  #menu-toggle {
+}
+
+#menu-toggle {
     display: none;
-    /* Oculta el checkbox */
-  }
-  .menu {
+}
+
+/*
+ * Estilos para el Menú Desplegable (Móvil)
+ */
+.menu {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #777;
+    background-color: var(--indigo); /* Fondo blanco */
+    ; /* Fondo blanco */
     width: 100%;
     overflow: hidden;
     max-height: 0;
-    transition: max-height 1s;
+    transition: max-height 0.3s ease-in-out;
     z-index: 10;
-  }
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  .menu ul {
+.menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
+}
 
-  .menu li a {
+.menu li a {
     display: block;
     padding: 15px;
     text-decoration: none;
-    color: white;
-    transition: background-color 0.3s ease;
-  }
+    color: #581845;
+    transition: background-color 0.2s ease-in-out;
+}
 
-  .menu li a:hover {
-    background-color: #0f118775;
-  }
+.menu li a:hover {
+    background-color: #DAF7A6; /* Color de fondo secundario suave al pasar el ratón */
+}
 
-  /* Mostrar el menú cuando el checkbox está marcado */
+/*
+ * Mostrar el menú cuando el checkbox está marcado
+ */
+:checked~.menu {
 
-  :checked~.menu {
     max-height: 400px;
-    /* Ajusta la altura máxima según la cantidad de elementos */
-  }
+}
 
-  #menu-toggle:checked~.menu-icono::before {
+#menu-toggle:checked~.menu-icono::before {
     content: '\2715';
-    display: none;
-  }
+}
 
-  .contenido-principal {
-    padding: 20px;
-    position: relative;  
-    top: 0; 
-    transition: top 0.5s ease-in-out;  
-  }
+/*
+ * Estilos para el Contenido Principal
+ */
+.contenido-principal {
+    padding: 30px;
+    position: relative;
+    top: 0;
+    transition: top 0.3s ease-in-out;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #581845; /* Texto principal */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .menu-hamburguesa {
-      display: none;
+        display: none;
     }
+
     .desktop-menu {
-      display: block;
-      background-color: #777;
-      padding: 15px;
-      text-align: center;
+        display: block;
+        padding: 15px 0;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
     .desktop-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
     }
 
     .desktop-menu li {
-      margin: 0 15px;
+        margin: 0 20px;
     }
+
     .desktop-menu a {
-      color: white;
-      text-decoration: none;
+        color: #581845;
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
     }
-  }
-  /* ////////////////header frnce 24////////////// */
-  header {
-    background: linear-gradient(45deg, #74d656, #ffffff);
-    padding: 10px 0;
-    font-family: sans-serif;
+
+    .desktop-menu a:hover {
+        color: #14e5f2; /* Color principal para el hover del menú */
+    }
 }
-  .header-contenedor {
+
+/*
+ * //////////////// Estilos del Header ////////////////
+ */
+header {
+    background-color: var(--blue); /* Fondo blanco */
+    color: #581845;
+    padding: 15px 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-contenedor {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,7 +188,7 @@ body {
 }
 
 .logo img {
-    height: 50px; /* Ajusta el tamaño del logo */
+    height: 50px;
 }
 
 .navegacion-principal ul {
@@ -130,17 +198,18 @@ body {
 }
 
 .navegacion-principal li {
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 .navegacion-principal a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: #900C3F; /* Color de texto secundario para la navegación principal */
+    font-weight: 600;
+    transition: color 0.2s ease-in-out;
 }
 
 .navegacion-principal a:hover {
-    color: #007bff; /* Color de enlace al pasar el ratón */
+    color: #14e5f2; /* Color principal para el hover de la navegación */
 }
 
 .header-info {
@@ -150,23 +219,24 @@ body {
 
 .fecha {
     margin-right: 20px;
-    color: #777;
+    color: #900C3F; /* Color de texto secundario para la fecha */
 }
 
 .redes-sociales a {
     display: inline-block;
-    background-color: #555;
-    color: white;
-    padding: 8px 12px;
-    margin-right: 5px;
-    border-radius: 5px;
+    background-color: #14cedb; /* Color principal para redes sociales */
+    color: #581845; /* Color del texto principal sobre el botón */
+    padding: 10px 14px;
+    margin-right: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .redes-sociales a:hover {
-    background-color: #777;
+    background-color: #0ea1ad; /* Versión ligeramente oscura del color principal para el hover */
 }
 
-/* Estilos responsivos */
+/* Estilos responsivos del header */
 @media (max-width: 768px) {
     .header-contenedor {
         flex-direction: column;
@@ -176,30 +246,40 @@ body {
     .navegacion-principal ul {
         flex-direction: column;
         align-items: flex-start;
+        margin-top: 10px;
     }
 
     .navegacion-principal li {
-        margin: 5px 0;
+        margin: 8px 0;
     }
 
     .header-info {
         flex-direction: column;
         align-items: flex-start;
+        margin-top: 10px;
     }
 
     .fecha {
-        margin: 5px 0;
+        margin: 8px 0;
+    }
+
+    .redes-sociales {
+        margin-top: 10px;
     }
 }
- /*  ////////////////la cinta de noticias////////////// */
- .cinta-noticias {
-    background-color: #e0e0e0;
+
+/*
+ *  //////////////// La Cinta de Noticias ////////////////
+ */
+.cinta-noticias {
+    background-color: #DAF7A6; /* Color de fondo secundario para la cinta */
     overflow: hidden;
     white-space: nowrap;
-    padding: 12px 0;
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
+    padding: 15px 0;
+    border-top: 1px solid #c7e594;
+    border-bottom: 1px solid #c7e594;
     position: relative;
+    color: #900C3F; /* Color de texto secundario para la cinta */
 }
 
 .noticias {
@@ -209,14 +289,15 @@ body {
 }
 
 .noticias span {
-    margin-right: 40px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #222;
+    margin-right: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #581845; /* Color del texto principal para destacar */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
+/* Definición de la animación de desplazamiento */
 @keyframes desplazamiento {
     0% {
         transform: translateX(0%);
@@ -226,19 +307,22 @@ body {
     }
 }
 
-
- 
+/*
+ * Estilos del Slider de Imágenes
+ */
 .slider {
     position: relative;
     width: 100%;
-    max-width: 1000px; /* Ancho máximo del slider */
-    margin: 0 auto; /* Centrar el slider */
+    max-width: 1000px;
+    margin: 30px auto;
     overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .slider-contenedor {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 }
 
 .slider-imagen {
@@ -248,9 +332,10 @@ body {
 
 .slider-imagen img {
     width: 100%;
-    height: 400px; /* Altura fija de las imágenes */
-    object-fit: cover; /* Recortar y escalar las imágenes para llenar el contenedor */
+    height: 450px;
+    object-fit: cover;
     display: block;
+    border-radius: 12px;
 }
 
 .slider-texto {
@@ -258,132 +343,158 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
+    color: #ffffff; /* Texto blanco sobre el fondo oscuro */
+    padding: 25px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .slider-texto h3 {
-    margin: 0;
+    margin: 0 0 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #14e5f2; /* Color principal para los títulos del slider */
 }
 
 .slider-texto p {
-    margin: 10px 0 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
 }
 
 .slider-anterior, .slider-siguiente {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgba(20, 229, 242, 0.4); /* Fondo semi-transparente del color principal */
+    color: #581845; /* Texto del color principal */
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1.2em;
 }
 
 .slider-anterior {
-    left: 10px;
+    left: 20px;
 }
 
 .slider-siguiente {
-    right: 10px;
+    right: 20px;
 }
 
-/* /////////////// Main/////////////// */
-
-
-  main {
+/*
+ * /////////////// Estilos del Main ///////////////
+ */
+main {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 30px;
     max-width: 1200px;
-    margin: 0 auto;
-}
- h3 {
-    font-size: 28px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    position: relative;
-    padding-bottom: 10px;
-    display: inline-block;
+    margin: 30px auto;
 }
 
-h3::after {
+main h3 {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: inline-block;
+    color: #581845; /* Color del texto principal para los títulos */
+    font-family: 'Poppins', sans-serif;
+}
+
+main h3::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0;
-    width: 80%;
-    height: 4px;
-    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #14e5f2; /* Color principal para la línea de título */
     border-radius: 2px;
 }
 
-/* ////////////Estilo de los parrafos//// */
+/* Estilos de los párrafos dentro de Main */
 main p {
-    margin: 1em;
-    font-size: 20px;
-    font-weight: bold;
-  
+    margin: 1em 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
     padding: 15px 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    text-align: left;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #581845; /* Texto principal */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
-
- 
-
 
 .contenido-principal {
     flex: 2;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
 }
 
 .contenido-principal h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #581845; /* Título principal */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
 }
 
 .contenido-principal .fecha-publicacion {
     font-size: 0.9em;
-    color: #777;
-    margin-bottom: 20px;
+    color: #900C3F; /* Color de texto secundario para la fecha */
+    margin-bottom: 25px;
 }
 
 .imagen-principal {
     flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
 }
 
 .imagen-principal img {
     max-width: 100%;
     height: auto;
     display: block;
+    border-radius: 8px;
 }
 
 aside {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
 }
 
 .noticias-relacionadas {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #DAF7A6; /* Color de fondo secundario para el aside */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
 }
 
 aside h2 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #581845; /* Títulos del aside */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-bottom: 2px solid #c7e594;
+    padding-bottom: 10px;
 }
 
 aside ul {
@@ -392,31 +503,51 @@ aside ul {
 }
 
 aside li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+aside li:last-child {
+    border-bottom: none;
 }
 
 aside li a {
     text-decoration: none;
-    color: #333;
+    color: #14e5f2; /* Color principal para los enlaces del aside */
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
 }
 
-/* Estilos responsivos */
+aside li a:hover {
+    color: #0ea1ad; /* Versión ligeramente oscura del color principal para el hover */
+}
+
+/* Estilos responsivos del Main */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
     }
+
+    .imagen-principal {
+        margin-bottom: 30px;
+    }
+
+    aside {
+        padding: 30px 0;
+    }
 }
 
-
-
-/*  ///////////////// footer///////////// */ 
+/*
+ *  ///////////////// Estilos del Footer ///////////////
+ */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    font-family: sans-serif;
+    background-color:var(--blue); /* Color secundario para el footer */
+    color: #ffffff; /* Texto blanco en el footer */
+    padding: 40px 0;
+    font-family: 'Nunito Sans', sans-serif;
+    margin-top: 40px;
 }
+
 .footer-contenedor {
     display: flex;
     justify-content: space-around;
@@ -426,13 +557,16 @@ footer {
 }
 
 .footer-columna {
-    flex: 1 1 200px;
+    flex: 1 1 250px;
     margin: 20px;
 }
 
 .footer-columna h3 {
-    border-bottom: 1px solid #555;
-    padding-bottom: 10px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 .footer-columna ul {
@@ -441,17 +575,19 @@ footer {
 }
 
 .footer-columna li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .footer-columna a {
     color: #ccc;
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
 .footer-columna a:hover {
     color: white;
 }
+ 
 
 .footer-columna.contacto p {
     margin: 5px 0;
@@ -459,7 +595,7 @@ footer {
 
 .redes-sociales a {
     display: inline-block;
-    background-color: #555;
+    background-color:var(--indigo);
     color: white;
     padding: 8px 12px;
     margin-right: 5px;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="culura-style.css">
 </head>
+
 <body>
     <div class="menu-hamburguesa">
         <input type="checkbox" id="menu-toggle">
@@ -63,7 +65,7 @@
                 <a href="#">Leer más</a>
             </article>
             <article class="noticia-destacada">
-                <img src="img/cordoba.jpg" alt="Noticia Destacada 2">
+                <img class="img-thumbnail" src="" alt="Noticia Destacada 2">
                 <h3>Título de la Noticia Destacada 2</h3>
                 <p>Breve descripción de la noticia destacada 2.</p>
                 <a href="#">Leer más</a>
@@ -107,54 +109,119 @@
                 <a href="#">Más información</a>
             </article>
         </section>
+        <section class="div-img"></section>
     </main>
     <!-- ///////////////// footer///////////// -->
-  <footer>
-    <div class="footer-contenedor">
-        <div class="footer-columna">
-            <h3>Secciones</h3>
-            <ul>
-                <li><a href="#">Noticias</a></li>
-                <li><a href="#">Internacional</a></li>
-                <li><a href="#">Economía</a></li>
-                <li><a href="#">Deportes</a></li>
-                <li><a href="#">Cultura</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna">
-            <h3>Canales</h3>
-            <ul>
-                <li><a href="#">En Vivo</a></li>
-                <li><a href="#">Programas</a></li>
-                <li><a href="#">Podcasts</a></li>
-                <li><a href="#">Aplicaciones</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna">
-            <h3>Información</h3>
-            <ul>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contáctenos</a></li>
-                <li><a href="#">Términos de Uso</a></li>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Cookies</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna contacto">
-            <h3>Contacto</h3>
-            <p>123 Calle Principal, Ciudad</p>
-            <p>Teléfono: +1 123 456 7890</p>
-            <p>Email: info@ejemplo.com</p>
-            <div class="redes-sociales">
-                <a href="#" class="facebook">Facebook</a>
-                <a href="#" class="twitter">Twitter</a>
-                <a href="#" class="youtube">YouTube</a>
+    <footer>
+        <div class="footer-contenedor">
+            <div class="footer-columna">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Internacional</a></li>
+                    <li><a href="#">Economía</a></li>
+                    <li><a href="#">Deportes</a></li>
+                    <li><a href="#">Cultura</a></li>
+                </ul>
+            </div>
+            <div class="footer-columna">
+                <h3>Canales</h3>
+                <ul>
+                    <li><a href="#">En Vivo</a></li>
+                    <li><a href="#">Programas</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Aplicaciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-columna">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Contáctenos</a></li>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-columna contacto">
+                <h3>Contacto</h3>
+                <p>123 Calle Principal, Ciudad</p>
+                <p>Teléfono: +1 123 456 7890</p>
+                <p>Email: info@ejemplo.com</p>
+                <div class="redes-sociales">
+                    <a href="#" class="facebook">Facebook</a>
+                    <a href="#" class="twitter">Twitter</a>
+                    <a href="#" class="youtube">YouTube</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-derechos">
-        <p>&copy; 2023 Todos los derechos reservados.</p>
-    </div>
-</footer>
+        <div class="footer-derechos" >
+            <p>&copy; 2023 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+
+        /*  fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+             .then(response => {
+                 if (!response.ok) {
+                     throw new Error('Network response was not ok');
+                 }
+                 return response.json();
+             })
+             
+             .then(data => {
+                 console.log("Nombre del pokemon: ", data.name);
+                 console.log("Habilidades:");
+                 data.abilities.forEach(ability => {
+                     console.log("- " + ability.ability.name);
+                 });
+             })
+ 
+             .catch(error => {
+                 console.error('There has been a problem with your fetch operation:', error);
+             }); */
+
+
+        fetch('https://rickandmortyapi.com/api/character')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                data.results.forEach(character => {
+                    const name = character.name;
+                    const titulo = document.createElement('h2');
+                    titulo.innerText = name;
+                    const urlImage = character.image;
+                    const imagenes = document.createElement('img');
+
+                    imagenes.classList.add('img-thumbnail', 'm-2');
+                    imagenes.src = urlImage;
+
+                    const divImg = document.querySelector('.div-img');
+                    const div = document.createElement('div');
+                    div.classList.add('card', 'div-Carta', 'm-2');
+
+                    const btn = document.createElement('button');
+                    btn.classList.add('btn', 'btn-primary');
+                    btn.textContent = "Pulsa";
+                    btn.addEventListener('click', () => {
+                        document.body.style.background = 'black'
+
+                    });
+
+                    div.appendChild(titulo);
+                    div.appendChild(imagenes);
+                    div.appendChild(btn);
+                    divImg.appendChild(div);
+                });
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+    </script>
 </body>
+
 </html>

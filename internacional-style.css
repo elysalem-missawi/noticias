@@ -1,40 +1,83 @@
- 
-
-.pagina-internacional {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-.noticias-destacadas, .noticias-regiones, .analisis-opinion {
-    margin-bottom: 30px;
-  
-}
-
-.noticia-destacada {
-    display: flex;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-.noticia-destacada img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-.region {
-    margin-bottom: 20px;
-}
-
-.region ul {
-    list-style: none;
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
     padding: 0;
-}
+  }
 
-.articulo-opinion {
-    border: 1px solid #ddd;
-    padding: 10px;
+  .noticias-destacadas {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .noticias-destacadas h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  #contenedor-noticias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .noticia-destacada {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+  }
+
+  .noticia-destacada img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .noticia-destacada h3 {
+    font-size: 1.1rem;
+    margin: 1rem;
+    color: #111;
+  }
+
+  .noticia-destacada p {
+    margin: 0 1rem 1rem;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .noticia-destacada a {
+    display: block;
+    text-align: center;
+    margin: 0 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .noticia-destacada a:hover {
+    background-color: #0056b3;
+  }
+
+  .noticia-destacada:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
 }

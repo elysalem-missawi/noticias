@@ -1,31 +1,370 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Voz Actual - Internacional</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="internacional-style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blue: #007bff;
+            --indigo: #6610f2;
+            --purple: #6f42c1;
+            --pink: #e83e8c;
+            --red: #dc3545;
+            --orange: #fd7e14;
+            --yellow: #ffc107;
+            --green: #28a745;
+            --teal: #20c997;
+            --cyan: #17a2b8;
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            line-height: 1.7;
+        }
+
+        /* Header Styles */
+        header .header-contenedor {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        header .logo img {
+            max-height: 60px;
+        }
+
+        header .navegacion-principal ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header .navegacion-principal li {
+            margin: 0 1rem;
+        }
+
+        header .navegacion-principal a {
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        header .header-info {
+            text-align: right;
+        }
+
+        header .redes-sociales a {
+            display: inline-block;
+            background-color: var(--indigo);
+            color: white;
+            padding: 8px 12px;
+            margin-left: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        header .redes-sociales a:hover {
+            background-color: #777;
+        }
+
+        /* Mobile Menu Styles */
+        .menu-hamburguesa {
+            position: relative;
+            background-color: var(--indigo);
+            color: #581845;
+            padding: 15px;
+            text-align: right;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-icono {
+            font-size: 2em;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--indigo);
+            width: 100%;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-in-out;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #581845;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .menu li a:hover {
+            background-color: #DAF7A6;
+        }
+
+        :checked~.menu {
+            max-height: 400px;
+        }
+
+        #menu-toggle:checked~.menu-icono::before {
+            content: '\2715';
+        }
+
+        /* Desktop Menu Styles */
+        .desktop-menu {
+            display: none;
+            background-color: var(--indigo);
+        }
+
+        .desktop-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .desktop-menu li {
+            margin: 0 1rem;
+        }
+
+        .desktop-menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Main Content Styles */
+        .noticias-destacadas {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .noticias-destacadas h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        #contenedor-noticias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .noticia-destacada {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .noticia-destacada img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .noticia-destacada h3 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.1rem;
+            margin: 1rem;
+            color: #111;
+        }
+
+        .noticia-destacada p {
+            margin: 0 1rem 1rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .noticia-destacada a {
+            display: block;
+            text-align: center;
+            margin: 0 1rem 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .noticia-destacada a:hover {
+            background-color: #0056b3;
+        }
+
+        .noticia-destacada:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--blue);
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: 'Nunito Sans', sans-serif;
+            margin-top: 40px;
+        }
+
+        .footer-contenedor {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-columna {
+            flex: 1 1 250px;
+            margin: 20px;
+        }
+
+        .footer-columna h3 {
+            border-bottom: 2px solid #555;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-columna ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-columna li {
+            margin-bottom: 10px;
+        }
+
+        .footer-columna a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .footer-columna a:hover {
+            color: white;
+        }
+
+        .footer-columna.contacto p {
+            margin: 5px 0;
+        }
+
+        .redes-sociales a {
+            display: inline-block;
+            background-color: var(--indigo);
+            color: white;
+            padding: 8px 12px;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+
+        .redes-sociales a:hover {
+            background-color: #777;
+        }
+
+        .footer-derechos {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #555;
+            padding-top: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-contenedor {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-columna {
+                text-align: center;
+            }
+
+            header .header-contenedor {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header .navegacion-principal ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header .navegacion-principal li {
+                margin: .5rem;
+            }
+
+            .desktop-menu {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-hamburguesa {
+                display: none;
+            }
+
+            .desktop-menu {
+                display: block;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="menu-hamburguesa">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icono">&#9776;</label>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-    <nav class="desktop-menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
     <header>
         <div class="header-contenedor">
             <div class="logo">
@@ -53,110 +392,136 @@
             </div>
         </div>
     </header>
+
+    <nav class="menu-hamburguesa">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icono">&#9776;</label>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="desktop-menu">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
     <main class="pagina-internacional">
         <section class="noticias-destacadas">
             <h2>Noticias Destacadas</h2>
-            <article class="noticia-destacada">
-                <img src="img/elon.jpg" alt="Noticia 1">
-                <h3>Título de la Noticia Destacada 1</h3>
-                <p>Breve descripción de la noticia destacada 1.</p>
-                <a href="#">Leer más</a>
-            </article>
-            <article class="noticia-destacada">
-                <img src="img/justin-Trudeau.jpg" alt="Noticia 2">
-                <h3>Título de la Noticia Destacada 2</h3>
-                <p>Breve descripción de la noticia destacada 2.</p>
-                <a href="#">Leer más</a>
-            </article>
+            <div id="contenedor-noticias"></div>
         </section>
+
         <section class="noticias-regiones">
-            <h2>Noticias por Regiones</h2>
-            <div class="region">
-                <h3>América</h3>
-                <ul>
-                    <li><a href="#">Noticia 1</a></li>
-                    <li><a href="#">Noticia 2</a></li>
-                    <li><a href="#">Noticia 3</a></li>
-                </ul>
-            </div>
-            <div class="region">
-                <h3>Europa</h3>
-                <ul>
-                    <li><a href="#">Noticia 1</a></li>
-                    <li><a href="#">Noticia 2</a></li>
-                    <li><a href="#">Noticia 3</a></li>
-                </ul>
-            </div>
-            <div class="region">
-                <h3>Asia</h3>
-                <ul>
-                    <li><a href="#">Noticia 1</a></li>
-                    <li><a href="#">Noticia 2</a></li>
-                    <li><a href="#">Noticia 3</a></li>
-                </ul>
-            </div>
         </section>
+
         <section class="analisis-opinion">
-            <h2>Análisis y Opinión</h2>
-            <article class="articulo-opinion">
-                <h3>Título del Artículo de Opinión</h3>
-                <p>Autor: Nombre del Autor</p>
-                <p>Breve resumen del artículo de opinión.</p>
-                <a href="#">Leer más</a>
-            </article>
         </section>
     </main>
 
-
-    
-
-  <!-- ///////////////// footer///////////// -->
-  <footer>
-    <div class="footer-contenedor">
-        <div class="footer-columna">
-            <h3>Secciones</h3>
-            <ul>
-                <li><a href="#">Noticias</a></li>
-                <li><a href="#">Internacional</a></li>
-                <li><a href="#">Economía</a></li>
-                <li><a href="#">Deportes</a></li>
-                <li><a href="#">Cultura</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna">
-            <h3>Canales</h3>
-            <ul>
-                <li><a href="#">En Vivo</a></li>
-                <li><a href="#">Programas</a></li>
-                <li><a href="#">Podcasts</a></li>
-                <li><a href="#">Aplicaciones</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna">
-            <h3>Información</h3>
-            <ul>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contáctenos</a></li>
-                <li><a href="#">Términos de Uso</a></li>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Cookies</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna contacto">
-            <h3>Contacto</h3>
-            <p>123 Calle Principal, Ciudad</p>
-            <p>Teléfono: +1 123 456 7890</p>
-            <p>Email: info@ejemplo.com</p>
-            <div class="redes-sociales">
-                <a href="#" class="facebook">Facebook</a>
-                <a href="#" class="twitter">Twitter</a>
-                <a href="#" class="youtube">YouTube</a>
+    <footer>
+        <div class="footer-contenedor">
+            <div class="footer-columna">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Internacional</a></li>
+                    <li><a href="#">Economía</a></li>
+                    <li><a href="#">Deportes</a></li>
+                    <li><a href="#">Cultura</a></li>
+                </ul>
+            </div>
+            <div class="footer-columna">
+                <h3>Canales</h3>
+                <ul>
+                    <li><a href="#">En Vivo</a></li>
+                    <li><a href="#">Programas</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Aplicaciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-columna">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Contáctenos</a></li>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-columna contacto">
+                <h3>Contacto</h3>
+                <p>123 Calle Principal, Ciudad</p>
+                <p>Teléfono: +1 123 456 7890</p>
+                <p>Email: info@ejemplo.com</p>
+                <div class="redes-sociales">
+                    <a href="#" class="facebook">Facebook</a>
+                    <a href="#" class="twitter">Twitter</a>
+                    <a href="#" class="youtube">YouTube</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-derechos">
-        <p>&copy; 2023 Todos los derechos reservados.</p>
-    </div>
-</footer>
+        <div class="footer-derechos">
+            <p>&copy; 2023 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+   <!--  <script>
+        const contenedor = document.getElementById('contenedor-noticias');
+      
+        fetch('https://api.currentsapi.services/v1/latest-news?apiKey=WjB-X2hqUgV-0f5-_O6K-N-FmlmvWfPGsdPtZGND-kmPVX9a')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data); // para ver en la consola
+      
+            if (!data.news || data.news.length === 0) {
+              contenedor.innerHTML = '<p>No hay noticias disponibles.</p>';
+              return;
+            }
+      
+            data.news.slice(0, 4).forEach(noticia => {
+              const article = document.createElement('article');
+              article.classList.add('noticia-destacada');
+              article.innerHTML = `
+                <img src="${noticia.image || 'img/default.jpg'}" alt="Noticia">
+                <h3>${noticia.title}</h3>
+                <p>${noticia.description || 'Sin descripción disponible.'}</p>
+                <a href="${noticia.url}" target="_blank">Leer más</a>
+              `;
+              contenedor.appendChild(article);
+            });
+          })
+          .catch(error => {
+            console.error('Error al cargar noticias:', error);
+            contenedor.innerHTML = '<p>Error al cargar las noticias.</p>';
+          });
+      
+        // Función de fecha
+        function actualizarFecha() {
+          const fechaElemento = document.querySelector('.fecha');
+          const fechaActual = new Date();
+      
+          const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+          const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      
+          const diaSemana = diasSemana[fechaActual.getDay()];
+          const dia = fechaActual.getDate();
+          const mes = meses[fechaActual.getMonth()];
+          const anio = fechaActual.getFullYear();
+          fechaElemento.textContent = `${diaSemana}, ${dia} de ${mes} de ${anio}`;
+        }
+      
+        actualizarFecha();
+        setInterval(actualizarFecha, 60000);
+      </script>
+      
 </body>
+ -->
 </html>

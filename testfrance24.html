@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTVE Ejemplo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #004a98;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo img {
+            height: 40px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .noticia-principal {
+            text-align: center;
+        }
+        .noticia-principal img {
+            max-width: 100%;
+        }
+        .noticias-secundarias {
+            display: flex;
+            justify-content: space-around;
+        }
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+        }
+        .carousel {
+            overflow: hidden;
+            width: 100%;
+        }
+        .carousel-item {
+            width: 100%;
+            display: none;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/150/004a98/FFFFFF?text=RTVE" alt="Logo RTVE">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Programas</a></li>
+                <li><a href="#">Directos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="noticia-principal">
+            <h2>Titular de Noticia Destacada</h2>
+            <img src="https://via.placeholder.com/600x400/87CEEB/000000?text=Noticia" alt="Imagen de Noticia">
+            <p>Resumen de la noticia principal...</p>
+        </section>
+        <section class="noticias-secundarias">
+            <article>
+                <h3>Noticia Secundaria 1</h3>
+                <p>Resumen breve...</p>
+            </article>
+            <article>
+                <h3>Noticia Secundaria 2</h3>
+                <p>Resumen breve...</p>
+            </article>
+        </section>
+        <section class="noticia-principal">
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <h2>Titular de Noticia 1</h2>
+                    <img src="https://via.placeholder.com/600x400/FF6347/FFFFFF?text=Noticia+1" alt="Imagen de Noticia 1">
+                    <p>Resumen de la noticia 1...</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Titular de Noticia 2</h2>
+                    <img src="https://via.placeholder.com/600x400/90EE90/000000?text=Noticia+2" alt="Imagen de Noticia 2">
+                    <p>Resumen de la noticia 2...</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Titular de Noticia 3</h2>
+                    <img src="https://via.placeholder.com/600x400/FFA07A/FFFFFF?text=Noticia+3" alt="Imagen de Noticia 3">
+                    <p>Resumen de la noticia 3...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RTVE Ejemplo</p>
+    </footer>
+    
+</body>
+</html>

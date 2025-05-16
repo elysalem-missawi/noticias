@@ -2,318 +2,198 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Hamburguesa CSS</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noticias en Vivo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Menú Hamburguesa y Navegación -->
   <div class="menu-hamburguesa">
-    <input type="checkbox" id="menu-toggle">
+    <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icono">&#9776;</label>
     <nav class="menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-</div>
-<nav class="desktop-menu">
-    <ul>
+      <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <nav class="desktop-menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
     </ul>
-</nav>
-<header>
+  </nav>
+
+  <header>
     <div class="header-contenedor">
-        <div class="logo">
-            <a href="index.html">
-              <img src="img/logo-la-voz-actual.png" alt="Logo del Sitio">
-
-            </a>
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo-la-voz-actual.png" alt="Logo del Sitio" />
+        </a>
+      </div>
+      <nav class="navegacion-principal">
+        <ul>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="internacional.html">Internacional</a></li>
+          <li><a href="economia.html">Economía</a></li>
+          <li><a href="deportes.html">Deportes</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="en-vivo.html">En Vivo</a></li>
+        </ul>
+      </nav>
+      <div class="header-info">
+        <p class="fecha">Martes, 16 de noviembre de 2023</p>
+        <div class="redes-sociales">
+          <a href="#" class="facebook">Facebook</a>
+          <a href="#" class="twitter">Twitter</a>
+          <a href="#" class="youtube">YouTube</a>
         </div>
-        <nav class="navegacion-principal">
-            <ul>
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="internacional.html">Internacional</a></li>
-                <li><a href="economia.html">Economía</a></li>
-                <li><a href="deportes.html">Deportes</a></li>
-                <li><a href="cultura.html">Cultura</a></li>
-                <li><a href="en-vivo.html">En Vivo</a></li>
-            </ul>
-        </nav>
-        <div class="header-info">
-            <p class="fecha">Martes, 16 de noviembre de 2023</p>
-            <div class="redes-sociales">
-                <a href="#" class="facebook">Facebook</a>
-                <a href="#" class="twitter">Twitter</a>
-                <a href="#" class="youtube">YouTube</a>
-            </div>
-        </div>
+      </div>
     </div>
-</header>
-  
+  </header>
 
-  <!-- ////////////////la cinta de noticias////////////// -->
+  <!-- Cinta de Noticias -->
   <div class="cinta-noticias">
-    <div class="noticias">
-      <span>Última hora: Importante anuncio del gobierno</span>
-      <span>Nueva tecnología revoluciona la industria</span>
-      <span>Deportes: Triunfo del equipo local en el campeonato</span>
-      <span>Clima: Alerta por fuertes lluvias en la región</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
-      <span>Economía: Nuevas tendencias en el mercado global</span>
+    <div class="noticias" id="cintaNoticias">
+      <span>Cargando titulares...</span>
     </div>
   </div>
-  <!-- /////////////// slider/////////////// -->
 
+  <!-- Slider de Noticias -->
   <div class="slider">
-    <div class="slider-contenedor">
-      <div class="slider-imagen">
-        <img src="img/17237539561838.jpg" alt="Noticia 1">
-        <div class="slider-texto">
-          <h3>Título de la Noticia 1</h3>
-          <p>Descripción breve de la noticia 1.</p>
-        </div>
-      </div>
-      <div class="slider-imagen">
-        <img src="img/243024_1227919.webp" alt="Noticia 2">
-        <div class="slider-texto">
-          <h3>Título de la Noticia 2</h3>
-          <p>Descripción breve de la noticia 2.</p>
-        </div>
-      </div>
-      <div class="slider-imagen">
-        <img src="img/Extra.2e16d0ba.fill-1200x630.jpg" alt="Noticia 3">
-        <div class="slider-texto">
-          <h3>Título de la Noticia 3</h3>
-          <p>Descripción breve de la noticia 3.</p>
-        </div>
-      </div>
-      <div class="slider-imagen">
-        <img src="img/please-2697951_1280.jpg" alt="Noticia 3">
-        <div class="slider-texto">
-          <h3>Título de la Noticia 3</h3>
-          <p>Descripción breve de la noticia 3.</p>
-        </div>
-      </div>
+    <div class="slider-contenedor" id="sliderContenedor">
+      <!-- Noticias dinámicas aquí -->
     </div>
-    <button class="slider-anterior">&#10094;</button>
-    <button class="slider-siguiente">&#10095;</button>
+    <button class="slider-anterior" onclick="moverSlider(-1)">&#10094;</button>
+    <button class="slider-siguiente" onclick="moverSlider(1)">&#10095;</button>
   </div>
 
-
-
+  <!-- Noticias Relacionadas -->
   <main>
-    <div class="contenido-principal">
-      <h1>Título Principal de la Noticia</h1>
-      <p class="fecha-publicacion">Publicado el 15 de noviembre de 2023</p>
-      <p>Este es el cuerpo de la noticia. Aquí puedes desarrollar la información con detalles y contexto.</p>
-      <p>Continúa el desarrollo de la noticia con más párrafos informativos.</p>
-    </div>
-
-    <div class="imagen-principal">
-      <img src="img/17237539561838.jpg" alt="Imagen representativa de la noticia">
-    </div>
-
-
     <aside>
-      <div class="noticias-relacionadas">
+      <div class="noticias-relacionadas" id="noticiasRelacionadas">
         <h2>Noticias Relacionadas</h2>
         <ul>
-          <li><a href="#">Noticia Relacionada 1</a></li>
-          <li><a href="#">Noticia Relacionada 2</a></li>
-          <li><a href="#">Noticia Relacionada 3</a></li>
+          <li>Cargando...</li>
         </ul>
       </div>
     </aside>
   </main>
 
-
-  <main>
-    <div class="contenido-principal">
-      <h1>Título Principal de la Noticia</h1>
-      <p class="fecha-publicacion">Publicado el 15 de noviembre de 2023</p>
-      <p>Este es el cuerpo de la noticia. Aquí puedes desarrollar la información con detalles y contexto.</p>
-      <p>Continúa el desarrollo de la noticia con más párrafos informativos.</p>
-    </div>
-
-    <div class="imagen-principal">
-      <img src="img/JRQ7RKHOAKQ26IRLJI7I4J5IGY.avif" alt="Imagen representativa de la noticia">
-    </div>
-
-
-    <aside>
-      <div class="noticias-relacionadas">
-        <h2>Noticias Relacionadas</h2>
-        <ul>
-          <li><a href="#">Noticia Relacionada 1</a></li>
-          <li><a href="#">Noticia Relacionada 2</a></li>
-          <li><a href="#">Noticia Relacionada 3</a></li>
-        </ul>
-      </div>
-    </aside>
-  </main>
-
-  <main>
-    <div class="contenido-principal">
-      <h1>Título Principal de la Noticia</h1>
-      <p class="fecha-publicacion">Publicado el 15 de noviembre de 2023</p>
-      <p>Este es el cuerpo de la noticia. Aquí puedes desarrollar la información con detalles y contexto.</p>
-      <p>Continúa el desarrollo de la noticia con más párrafos informativos.</p>
-    </div>
-
-    <div class="imagen-principal">
-      <img src="img/elon.jpg" alt="Imagen representativa de la noticia">
-    </div>
-
-
-    <aside>
-      <div class="noticias-relacionadas">
-        <h2>Noticias Relacionadas</h2>
-        <ul>
-          <li><a href="#">Noticia Relacionada 1</a></li>
-          <li><a href="#">Noticia Relacionada 2</a></li>
-          <li><a href="#">Noticia Relacionada 3</a></li>
-        </ul>
-      </div>
-    </aside>
-  </main>
-
-  <main>
-    <div class="contenido-principal">
-      <h1>Título Principal de la Noticia</h1>
-      <p class="fecha-publicacion">Publicado el 15 de noviembre de 2023</p>
-      <p>Este es el cuerpo de la noticia. Aquí puedes desarrollar la información con detalles y contexto.</p>
-      <p>Continúa el desarrollo de la noticia con más párrafos informativos.</p>
-    </div>
-
-    <div class="imagen-principal">
-      <img src="image.png" alt="Imagen representativa de la noticia">
-    </div>
-
-
-    <aside>
-      <div class="noticias-relacionadas">
-        <h2>Noticias Relacionadas</h2>
-        <ul>
-          <li><a href="#">Noticia Relacionada 1</a></li>
-          <li><a href="#">Noticia Relacionada 2</a></li>
-          <li><a href="#">Noticia Relacionada 3</a></li>
-        </ul>
-      </div>
-    </aside>
-  </main>
-
-  </div>
-
-
-
-  
   <footer>
     <div class="footer-contenedor">
-        <div class="footer-columna">
-            <h3>Secciones</h3>
-            <ul>
-                <li><a href="#">Noticias</a></li>
-                <li><a href="#">Internacional</a></li>
-                <li><a href="#">Economía</a></li>
-                <li><a href="#">Deportes</a></li>
-                <li><a href="#">Cultura</a></li>
-            </ul>
+      <div class="footer-columna">
+        <h3>Secciones</h3>
+        <ul>
+          <li><a href="#">Noticias</a></li>
+          <li><a href="#">Internacional</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Cultura</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna">
+        <h3>Canales</h3>
+        <ul>
+          <li><a href="#">En Vivo</a></li>
+          <li><a href="#">Programas</a></li>
+          <li><a href="#">Podcasts</a></li>
+          <li><a href="#">Aplicaciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna">
+        <h3>Información</h3>
+        <ul>
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Contáctenos</a></li>
+          <li><a href="#">Términos de Uso</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna contacto">
+        <h3>Contacto</h3>
+        <p>123 Calle Principal, Ciudad</p>
+        <p>Teléfono: +1 123 456 7890</p>
+        <p>Email: info@ejemplo.com</p>
+        <div class="redes-sociales">
+          <a href="#" class="facebook">Facebook</a>
+          <a href="#" class="twitter">Twitter</a>
+          <a href="#" class="youtube">YouTube</a>
         </div>
-        <div class="footer-columna">
-            <h3>Canales</h3>
-            <ul>
-                <li><a href="#">En Vivo</a></li>
-                <li><a href="#">Programas</a></li>
-                <li><a href="#">Podcasts</a></li>
-                <li><a href="#">Aplicaciones</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna">
-            <h3>Información</h3>
-            <ul>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contáctenos</a></li>
-                <li><a href="#">Términos de Uso</a></li>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Cookies</a></li>
-            </ul>
-        </div>
-        <div class="footer-columna contacto">
-            <h3>Contacto</h3>
-            <p>123 Calle Principal, Ciudad</p>
-            <p>Teléfono: +1 123 456 7890</p>
-            <p>Email: info@ejemplo.com</p>
-            <div class="redes-sociales">
-                <a href="#" class="facebook">Facebook</a>
-                <a href="#" class="twitter">Twitter</a>
-                <a href="#" class="youtube">YouTube</a>
-            </div>
-        </div>
+      </div>
     </div>
     <div class="footer-derechos">
-        <p>&copy; 2023 Todos los derechos reservados.</p>
+      <p>&copy; 2023 Todos los derechos reservados.</p>
     </div>
-</footer>
+  </footer>
 
+  <!-- JS para consumir API y actualizar contenido -->
   <script>
-    const sliderContenedor = document.querySelector('.slider-contenedor');
-    const sliderImagenes = document.querySelectorAll('.slider-imagen');
-    const sliderAnterior = document.querySelector('.slider-anterior');
-    const sliderSiguiente = document.querySelector('.slider-siguiente');
+    const apiKey = 'api_live_9H7uk80t9IVNAYZWr7u9umi3KeLZYEvl8mo4y3stbM';
+    const url = `https://api.apitube.io/v1/news/search?language=es&limit=5&apiKey=${apiKey}`;
 
-    let contador = 0;
-    let intervalo; // Variable para almacenar el intervalo
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const noticias = data.results || [];
+        const slider = document.getElementById('sliderContenedor');
+        const cinta = document.getElementById('cintaNoticias');
+        const relacionadas = document.getElementById('noticiasRelacionadas').querySelector('ul');
 
-    function siguienteSlide() {
-      contador++;
-      if (contador >= sliderImagenes.length) {
-        contador = 0;
-      }
-      sliderContenedor.style.transform = `translateX(-${contador * 100}%)`;
+        // Limpiar
+        slider.innerHTML = '';
+        cinta.innerHTML = '';
+        relacionadas.innerHTML = '';
+
+        noticias.forEach(noticia => {
+          console.log(noticia)
+          const img = noticia.image_url || 'img/default.jpg';
+
+          // Slider
+          const div = document.createElement('div');
+          div.classList.add('slider-imagen');
+          div.innerHTML = `
+            <img src="${img}" alt="Noticia">
+            <div class="slider-texto">
+              <h3>${noticia.title}</h3>
+              <p>${noticia.description || ''}</p>
+            </div>`;
+          slider.appendChild(div);
+
+          // Cinta de noticias
+          const span = document.createElement('span');
+          span.textContent = noticia.title;
+          cinta.appendChild(span);
+
+          // Noticias relacionadas
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${noticia.url}" target="_blank">${noticia.title}</a>`;
+          relacionadas.appendChild(li);
+        });
+      })
+      .catch(err => {
+        console.error('Error al obtener noticias:', err);
+      });
+
+    // Slider navegación (opcional simple)
+    let slideIndex = 0;
+    function moverSlider(n) {
+      const slides = document.querySelectorAll('.slider-imagen');
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.style.display = i === slideIndex ? 'block' : 'none';
+      });
     }
 
-    function anteriorSlide() {
-      contador--;
-      if (contador < 0) {
-        contador = sliderImagenes.length - 1;
-      }
-      sliderContenedor.style.transform = `translateX(-${contador * 100}%)`;
-    }
-
-    function iniciarSliderAutomatico() {
-      intervalo = setInterval(siguienteSlide, 5000); // Cambia cada 20 segundos (20000 ms)
-    }
-
-    function detenerSliderAutomatico() {
-      clearInterval(intervalo);
-    }
-
-    sliderSiguiente.addEventListener('click', () => {
-      detenerSliderAutomatico(); // Detiene el slider automático al hacer clic
-      siguienteSlide();
-      iniciarSliderAutomatico(); // Reinicia el slider automático
-    });
-
-    sliderAnterior.addEventListener('click', () => {
-      detenerSliderAutomatico(); // Detiene el slider automático al hacer clic
-      anteriorSlide();
-      iniciarSliderAutomatico(); // Reinicia el slider automático
-    });
-
-    iniciarSliderAutomatico(); // Inicia el slider automático al cargar la página
+    // Mostrar primer slide al inicio
+    window.onload = () => moverSlider(0);
   </script>
 </body>
 
