@@ -1,0 +1,68 @@
+{
+  "noticiasDestacadas": [
+    {
+      "imagen": "img/economia-destacada1.jpg",
+      "titulo": "Título de la Noticia Destacada 1",
+      "descripcion": "Breve descripción de la noticia destacada 1.",
+      "enlace": "#"
+    },
+    {
+      "imagen": "img/economia-destacada2.jpg",
+      "titulo": "Título de la Noticia Destacada 2",
+      "descripcion": "Breve descripción de la noticia destacada 2.",
+      "enlace": "#"
+    }
+  ],
+  "ultimasNoticias": [
+    {
+      "imagen": "img/economia1.jpg",
+      "titulo": "Título de la Noticia 1",
+      "descripcion": "Breve descripción de la noticia 1.",
+      "enlace": "#"
+    },
+    {
+      "imagen": "img/economia2.jpg",
+      "titulo": "Título de la Noticia 2",
+      "descripcion": "Breve descripción de la noticia 2.",
+      "enlace": "#"
+    },
+    {
+      "imagen": "img/economia3.jpg",
+      "titulo": "Título de la Noticia 3",
+      "descripcion": "Breve descripción de la noticia 3.",
+      "enlace": "#"
+    }
+  ],
+  "categorias": [
+    "Mercados",
+    "Finanzas",
+    "Empresas",
+    "Tecnología"
+  ],
+  "analisisOpinion": [
+    {
+      "titulo": "Título del Artículo de Opinión",
+      "autor": "Nombre del Autor",
+      "resumen": "Breve resumen del artículo de opinión.",
+      "enlace": "#"
+    }
+  ],
+  "indicadores": [
+    { "nombre": "Dólar", "valor": "$18.25" },
+    { "nombre": "Euro", "valor": "$19.80" },
+    { "nombre": "Bolsa", "valor": "+1.2%" },
+    { "nombre": "Inflación", "valor": "3.8%" }
+  ],
+  "expertos": [
+    {
+      "imagen": "img/leo.jfif",
+      "nombre": "Leandro García",
+      "cita": "La economía global muestra señales de recuperación, pero la inflación sigue siendo un reto."
+    },
+    {
+      "imagen": "img/elon.jpg",
+      "nombre": "Elon Martínez",
+      "cita": "La innovación tecnológica será clave para el crecimiento de los próximos años."
+    }
+  ]
+}

@@ -6,29 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noticias en Vivo</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Menú Hamburguesa y Navegación -->
-  <div class="menu-hamburguesa">
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icono">&#9776;</label>
-    <nav class="menu">
+  <!-- Menú Hamburguesa Moderno y Navegación -->
+  <div class="menu-hamburguesa menu-hamburguesa-moderno">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icono elegante" tabindex="0" aria-label="Abrir menú principal">
+      <span class="icono-barras"><i class="fas fa-bars"></i></span>
+      <span class="icono-x"><i class="fas fa-times"></i></span>
+    </label>
+    <nav class="menu menu-moderno">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="servicios.html"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+      </ul>
+    </nav>
+    <nav class="nav-principal-moderno nav-movil">
+      <ul>
+        <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
+        <li><a href="internacional.html"><i class="fas fa-globe"></i> Internacional</a></li>
+        <li><a href="economia.html"><i class="fas fa-chart-line"></i> Economía</a></li>
+        <li><a href="deporte.html"><i class="fas fa-futbol"></i> Deportes</a></li>
       </ul>
     </nav>
   </div>
-
-  <nav class="desktop-menu">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
 
   <header>
     <div class="header-contenedor">
@@ -42,28 +46,19 @@
           <li><a href="noticias.html">Noticias</a></li>
           <li><a href="internacional.html">Internacional</a></li>
           <li><a href="economia.html">Economía</a></li>
-          <li><a href="deportes.html">Deportes</a></li>
-          <li><a href="cultura.html">Cultura</a></li>
-          <li><a href="en-vivo.html">En Vivo</a></li>
+          <li><a href="deporte.html">deporte</a></li>
         </ul>
       </nav>
       <div class="header-info">
-        <p class="fecha">Martes, 16 de noviembre de 2023</p>
+        <p class="fecha" id="fecha"></p>
         <div class="redes-sociales">
-          <a href="#" class="facebook">Facebook</a>
-          <a href="#" class="twitter">Twitter</a>
-          <a href="#" class="youtube">YouTube</a>
+          <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- Cinta de Noticias -->
-  <div class="cinta-noticias">
-    <div class="noticias" id="cintaNoticias">
-      <span>Cargando titulares...</span>
-    </div>
-  </div>
 
   <!-- Slider de Noticias -->
   <div class="slider">
@@ -91,20 +86,15 @@
       <div class="footer-columna">
         <h3>Secciones</h3>
         <ul>
-          <li><a href="#">Noticias</a></li>
-          <li><a href="#">Internacional</a></li>
-          <li><a href="#">Economía</a></li>
-          <li><a href="#">Deportes</a></li>
-          <li><a href="#">Cultura</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="internacional.html">Internacional</a></li>
+          <li><a href="economia.html">Economía</a></li>
         </ul>
       </div>
       <div class="footer-columna">
         <h3>Canales</h3>
         <ul>
           <li><a href="#">En Vivo</a></li>
-          <li><a href="#">Programas</a></li>
-          <li><a href="#">Podcasts</a></li>
-          <li><a href="#">Aplicaciones</a></li>
         </ul>
       </div>
       <div class="footer-columna">
@@ -123,9 +113,9 @@
         <p>Teléfono: +1 123 456 7890</p>
         <p>Email: info@ejemplo.com</p>
         <div class="redes-sociales">
-          <a href="#" class="facebook">Facebook</a>
-          <a href="#" class="twitter">Twitter</a>
-          <a href="#" class="youtube">YouTube</a>
+          <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
@@ -136,47 +126,61 @@
 
   <!-- JS para consumir API y actualizar contenido -->
   <script>
-    const apiKey = 'api_live_9H7uk80t9IVNAYZWr7u9umi3KeLZYEvl8mo4y3stbM';
-    const url = `https://api.apitube.io/v1/news/search?language=es&limit=5&apiKey=${apiKey}`;
+    // API alternativa gratuita: NewsData.io
+    const url = 'https://newsdata.io/api/1/news?apikey=pub_87557355af61c3245b1d164782633723c0e6e&language=es&country=mx&category=top';
 
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        const noticias = data.results || [];
+        const noticias = data.results || data.news || [];
         const slider = document.getElementById('sliderContenedor');
-        const cinta = document.getElementById('cintaNoticias');
         const relacionadas = document.getElementById('noticiasRelacionadas').querySelector('ul');
 
         // Limpiar
         slider.innerHTML = '';
-        cinta.innerHTML = '';
         relacionadas.innerHTML = '';
 
-        noticias.forEach(noticia => {
-          console.log(noticia)
-          const img = noticia.image_url || 'img/default.jpg';
+        // Mostrar noticias en grid visual con imagen, título y resumen
+        slider.innerHTML = '';
+        const grid = document.createElement('div');
+        grid.className = 'noticias-grid';
+        noticias.slice(0, 8).forEach((noticia, i) => {
+          const img = noticia.image_url || noticia.image || 'img/default.jpg';
+          const resumen = noticia.description || noticia.content || '';
+          const link = noticia.link || noticia.url || '#';
+          const card = document.createElement('a');
+          card.className = 'noticia-card';
+          card.href = link;
+          card.target = '_blank';
+          card.innerHTML = `
+            <div class="noticia-img">
+              <img src="${img}" alt="Noticia">
+            </div>
+            <div class="noticia-info">
+              <h3 class="noticia-titulo">${noticia.title || ''}</h3>
+              <p class="noticia-resumen">${resumen}</p>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+        slider.appendChild(grid);
 
-          // Slider
-          const div = document.createElement('div');
-          div.classList.add('slider-imagen');
-          div.innerHTML = `
-            <img src="${img}" alt="Noticia">
-            <div class="slider-texto">
-              <h3>${noticia.title}</h3>
-              <p>${noticia.description || ''}</p>
-            </div>`;
-          slider.appendChild(div);
+        noticias.forEach((noticia, i) => {
+          const img = noticia.image_url || noticia.image || noticia.image_url || 'img/default.jpg';
+          const fecha = noticia.pubDate ? new Date(noticia.pubDate).toLocaleDateString('es-MX', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+          const categoria = noticia.category ? `<span class='categoria'><i class='fa fa-tag'></i> ${noticia.category}</span>` : '';
 
-          // Cinta de noticias
-          const span = document.createElement('span');
-          span.textContent = noticia.title;
-          cinta.appendChild(span);
-
-          // Noticias relacionadas
+          // Noticias relacionadas profesional
           const li = document.createElement('li');
-          li.innerHTML = `<a href="${noticia.url}" target="_blank">${noticia.title}</a>`;
+          li.innerHTML = `
+            <a href="${noticia.link || noticia.url || '#'}" target="_blank">
+              <i class="fa fa-newspaper"></i> ${noticia.title || ''}
+              <span class="relacionada-fecha">${fecha}</span>
+            </a>`;
           relacionadas.appendChild(li);
         });
+        // Mostrar primer slide
+        moverSlider(0);
       })
       .catch(err => {
         console.error('Error al obtener noticias:', err);
@@ -195,6 +199,7 @@
     // Mostrar primer slide al inicio
     window.onload = () => moverSlider(0);
   </script>
+  <script src="script.js"></script>
 </body>
 
 </html>

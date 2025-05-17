@@ -1,0 +1,42 @@
+{
+  "noticiasDestacadas": [
+    {
+      "imagen": "img/justin-Trudeau.jpg",
+      "titulo": "El Primer Ministro de Canadá, Justin Trudeau, realizó su primera visita oficial a la Ciudad de México",
+      "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, sapiente! Enim, vel. Rem similique qui provident sequi ab illo odio esse. Dicta expedita quas molestias eveniet omnis officia pariatur aliquam..",
+      "enlace": "#"
+    },
+    {
+      "imagen": "img/garcia.jfif",
+      "titulo": "Título de la Noticia Destacada 2",
+      "descripcion": "Breve descripción de la noticia destacada 2.",
+      "enlace": "#"
+    }
+  ],
+  "ultimasNoticias": [
+    {
+      "imagen": "img/fol.jfif",
+      "titulo": "Título de la Noticia 1",
+      "descripcion": "Breve descripción de la noticia 1.",
+      "enlace": "#"
+    },
+    {
+      "imagen": "img/Extra.2e16d0ba.fill-1200x630.jpg",
+      "titulo": "Título de la Noticia 2",
+      "descripcion": "Breve descripción de la noticia 2.",
+      "enlace": "#"
+    },
+    {
+      "imagen": "img/243024_1227919.webp",
+      "titulo": "Título de la Noticia 3",
+      "descripcion": "Breve descripción de la noticia 3.",
+      "enlace": "#"
+    }
+  ],
+  "categorias": [
+    "Política",
+    "Tecnología",
+    "Salud",
+    "Entretenimiento"
+  ]
+}

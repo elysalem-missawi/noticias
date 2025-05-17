@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Voz Actual - Economía</title>
+    <title>La Voz Actual - Deportes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ecomomia-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -33,20 +32,7 @@
         </nav>
     </div>
 
-    <!-- Menú Hamburguesa y Navegación -->
-  <div class="menu-hamburguesa">
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icono">&#9776;</label>
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <nav class="desktop-menu">
+    <nav class="desktop-menu">
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="servicios.html">Servicios</a></li>
@@ -80,101 +66,24 @@
       </div>
     </div>
   </header>
-    <main class="pagina-economia">
+    <main class="pagina-deporte">
         <section class="noticias-destacadas">
             <h2>Noticias Destacadas</h2>
-            <article class="noticia-destacada">
-                <img src="img/economia-destacada1.jpg" alt="Noticia Destacada 1">
-                <h3>Título de la Noticia Destacada 1</h3>
-                <p>Breve descripción de la noticia destacada 1.</p>
-                <a href="#">Leer más</a>
-            </article>
-            <article class="noticia-destacada">
-                <img src="img/economia-destacada2.jpg" alt="Noticia Destacada 2">
-                <h3>Título de la Noticia Destacada 2</h3>
-                <p>Breve descripción de la noticia destacada 2.</p>
-                <a href="#">Leer más</a>
-            </article>
+            <div id="deporteDestacadas" class="noticias-grid"></div>
         </section>
         <section class="ultimas-noticias">
             <h2>Últimas Noticias</h2>
-            <article class="noticia">
-                <img src="img/economia1.jpg" alt="Noticia 1">
-                <h3>Título de la Noticia 1</h3>
-                <p>Breve descripción de la noticia 1.</p>
-                <a href="#">Leer más</a>
-            </article>
-            <article class="noticia">
-                <img src="img/economia2.jpg" alt="Noticia 2">
-                <h3>Título de la Noticia 2</h3>
-                <p>Breve descripción de la noticia 2.</p>
-                <a href="#">Leer más</a>
-            </article>
-            <article class="noticia">
-                <img src="img/economia3.jpg" alt="Noticia 3">
-                <h3>Título de la Noticia 3</h3>
-                <p>Breve descripción de la noticia 3.</p>
-                <a href="#">Leer más</a>
-            </article>
+            <div id="deporteUltimas" class="noticias-grid"></div>
         </section>
         <section class="categorias">
             <h2>Categorías</h2>
             <ul>
-                <li><a href="#">Mercados</a></li>
-                <li><a href="#">Finanzas</a></li>
-                <li><a href="#">Empresas</a></li>
-                <li><a href="#">Tecnología</a></li>
+                <li><a href="#">Fútbol</a></li>
+                <li><a href="#">Básquet</a></li>
+                <li><a href="#">Tenis</a></li>
+                <li><a href="#">Automovilismo</a></li>
             </ul>
         </section>
-        <section class="analisis-opinion">
-            <h2>Análisis y Opinión</h2>
-            <article class="articulo-opinion">
-                <h3>Título del Artículo de Opinión</h3>
-                <p>Autor: Nombre del Autor</p>
-                <p>Breve resumen del artículo de opinión.</p>
-                <a href="#">Leer más</a>
-            </article>
-        </section>
-        <section class="indicadores-economicos">
-      <h2>Indicadores Económicos</h2>
-      <div class="indicadores-lista">
-        <div class="indicador">
-          <span class="nombre">Dólar</span>
-          <span class="valor">$18.25</span>
-        </div>
-        <div class="indicador">
-          <span class="nombre">Euro</span>
-          <span class="valor">$19.80</span>
-        </div>
-        <div class="indicador">
-          <span class="nombre">Bolsa</span>
-          <span class="valor">+1.2%</span>
-        </div>
-        <div class="indicador">
-          <span class="nombre">Inflación</span>
-          <span class="valor">3.8%</span>
-        </div>
-      </div>
-    </section>
-    <section class="expertos-opinan">
-  <h2>Expertos opinan</h2>
-  <div class="expertos-lista">
-    <div class="experto">
-      <img src="img/leo.jfif" alt="Experto Leo">
-      <div>
-        <p class="nombre">Leandro García</p>
-        <p class="cita">“La economía global muestra señales de recuperación, pero la inflación sigue siendo un reto.”</p>
-      </div>
-    </div>
-    <div class="experto">
-      <img src="img/elon.jpg" alt="Experto Elon">
-      <div>
-        <p class="nombre">Elon Martínez</p>
-        <p class="cita">“La innovación tecnológica será clave para el crecimiento de los próximos años.”</p>
-      </div>
-    </div>
-  </div>
-</section>
     </main>
 
     <!-- ///////////////// footer///////////// -->
@@ -219,6 +128,76 @@
         <p>&copy; 2023 Todos los derechos reservados.</p>
     </div>
 </footer>
-<script src="script.js"></script>
+<script>
+// Noticias deportivas de ejemplo (puedes conectar a una API si lo deseas)
+const noticiasDeporte = [
+  {
+    imagen: 'img/alaves.webp',
+    titulo: 'Alavés logra una victoria histórica',
+    resumen: 'El Deportivo Alavés sorprende en la liga con una actuación memorable.',
+    link: '#'
+  },
+  {
+    imagen: 'img/cordoba.jpg',
+    titulo: 'Córdoba CF asciende a Segunda',
+    resumen: 'El equipo andaluz celebra su regreso a la categoría de plata.',
+    link: '#'
+  },
+  {
+    imagen: 'img/rekelme.avif',
+    titulo: 'Riquelme brilla en la Copa',
+    resumen: 'El joven talento argentino marca la diferencia en el torneo.',
+    link: '#'
+  },
+  {
+    imagen: 'img/please-2697951_1280.jpg',
+    titulo: 'Récord mundial en atletismo',
+    resumen: 'Un nuevo récord mundial sorprende al mundo del deporte.',
+    link: '#'
+  }
+];
+
+function renderNoticiasDeporte() {
+  const gridDestacadas = document.getElementById('deporteDestacadas');
+  const gridUltimas = document.getElementById('deporteUltimas');
+  gridDestacadas.innerHTML = '';
+  gridUltimas.innerHTML = '';
+  // Destacadas (primeras 2)
+  noticiasDeporte.slice(0,2).forEach(noticia => {
+    const card = document.createElement('a');
+    card.className = 'noticia-card';
+    card.href = noticia.link;
+    card.target = '_blank';
+    card.innerHTML = `
+      <div class="noticia-img">
+        <img src="${noticia.imagen}" alt="Noticia">
+      </div>
+      <div class="noticia-info">
+        <h3 class="noticia-titulo">${noticia.titulo}</h3>
+        <p class="noticia-resumen">${noticia.resumen}</p>
+      </div>
+    `;
+    gridDestacadas.appendChild(card);
+  });
+  // Últimas (resto)
+  noticiasDeporte.slice(2).forEach(noticia => {
+    const card = document.createElement('a');
+    card.className = 'noticia-card';
+    card.href = noticia.link;
+    card.target = '_blank';
+    card.innerHTML = `
+      <div class="noticia-img">
+        <img src="${noticia.imagen}" alt="Noticia">
+      </div>
+      <div class="noticia-info">
+        <h3 class="noticia-titulo">${noticia.titulo}</h3>
+        <p class="noticia-resumen">${noticia.resumen}</p>
+      </div>
+    `;
+    gridUltimas.appendChild(card);
+  });
+}
+renderNoticiasDeporte();
+</script>
 </body>
 </html>
