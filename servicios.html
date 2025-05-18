@@ -10,66 +10,28 @@
 </head>
 
 <body>
-
-    <div class="menu-hamburguesa menu-hamburguesa-moderno">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icono elegante" tabindex="0" aria-label="Abrir menú principal">
-            <span class="icono-barras"><i class="fas fa-bars"></i></span>
-            <span class="icono-x"><i class="fas fa-times"></i></span>
-        </label>
-        <nav class="menu menu-moderno">
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="servicios.html"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
-                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-            </ul>
-        </nav>
-        <nav class="nav-principal-moderno nav-movil">
-            <ul>
-                <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
-                <li><a href="internacional.html"><i class="fas fa-globe"></i> Internacional</a></li>
-                <li><a href="economia.html"><i class="fas fa-chart-line"></i> Economía</a></li>
-                <li><a href="deporte.html"><i class="fas fa-futbol"></i> Deportes</a></li>
-            </ul>
-        </nav>
-    </div>
-    <nav class="desktop-menu desktop-menu-moderno">
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="servicios.html"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
-            <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-            <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
-            <li><a href="internacional.html"><i class="fas fa-globe"></i> Internacional</a></li>
-            <li><a href="economia.html"><i class="fas fa-chart-line"></i> Economía</a></li>
-            <li><a href="deporte.html"><i class="fas fa-futbol"></i> Deportes</a></li>
-        </ul>
-    </nav>
     <header>
-        <div class="header-contenedor header-contenedor-moderno">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/logo-la-voz-actual.png" alt="Logo del Sitio">
-                </a>
-            </div>
-            <nav class="navegacion-principal nav-principal-moderno">
-                <ul>
-                    <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
-                    <li><a href="internacional.html"><i class="fas fa-globe"></i> Internacional</a></li>
-                    <li><a href="economia.html"><i class="fas fa-chart-line"></i> Economía</a></li>
-                    <li><a href="deporte.html"><i class="fas fa-futbol"></i> Deportes</a></li>
-
-                </ul>
-            </nav>
-            <div class="header-info header-info-moderno">
-                <p class="fecha" id="fecha"></p>
-                <div class="redes-sociales redes-sociales-moderno">
-                    <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
+      <nav class="navbar">
+        <div class="logo">La Voz Actual</div>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" title="Abrir menú">
+          <span class="hamburger-box">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="servicios.html"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+          <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+          <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
+          <li><a href="internacional.html"><i class="fas fa-globe"></i> Internacional</a></li>
+          <li><a href="economia.html"><i class="fas fa-chart-line"></i> Economía</a></li>
+          <li><a href="deporte.html"><i class="fas fa-futbol"></i> Deportes</a></li>
+        </ul>
+      </nav>
     </header>
+
     <main>
         <section class="noticias-destacadas">
             <h2>Nuestros Servicios</h2>
@@ -155,6 +117,7 @@
             <p>&copy; 2023 Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="script.js"></script>
     <script>
         // Fecha dinámica en el header
         document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });

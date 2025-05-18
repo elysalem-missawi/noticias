@@ -2,146 +2,177 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Voz Actual - Internacional</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noticias en Vivo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
  
-    <div class="menu-hamburguesa menu-hamburguesa-moderno">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icono elegante" tabindex="0" aria-label="Abrir menú principal">
-            <span class="icono-barras"><i class="fas fa-bars"></i></span>
-            <span class="icono-x"><i class="fas fa-times"></i></span>
-        </label>
-        <nav class="menu menu-moderno">
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="servicios.html"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
-                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-            </ul>
-        </nav>
-        <nav class="nav-principal-moderno nav-movil">
-            <ul>
-                <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
-                <li><a href="internacional.html"><i class="fas fa-globe"></i> Internacional</a></li>
-                <li><a href="economia.html"><i class="fas fa-chart-line"></i> Economía</a></li>
-                <li><a href="deporte.html"><i class="fas fa-futbol"></i> Deportes</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <nav class="menu-hamburguesa">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icono">&#9776;</label>
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <nav class="desktop-menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+  <header>
+      <nav class="navbar">
+        <div class="logo">La Voz Actual</div>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" title="Abrir menú">
+          <span class="hamburger-box">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="servicios.html"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+          <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+          <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
+          <li><a href="internacional.html"><i class="fas fa-globe"></i> Internacional</a></li>
+          <li><a href="economia.html"><i class="fas fa-chart-line"></i> Economía</a></li>
+          <li><a href="deporte.html"><i class="fas fa-futbol"></i> Deportes</a></li>
         </ul>
-    </nav>   
-    <header>
-        <div class="header-contenedor">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/logo-la-voz-actual.png" alt="Logo del Sitio" />
-                </a>
-            </div>
-            <nav class="navegacion-principal">
-                <ul>
-                    <li><a href="noticias.html">Noticias</a></li>
-                    <li><a href="internacional.html">Internacional</a></li>
-                    <li><a href="economia.html">Economía</a></li>
-                       <li><a href="deporte.html">deporte</a></li>
-
-                </ul>
-            </nav>
-            <div class="header-info">
-                <p class="fecha" id="fecha"></p>
-                <div class="redes-sociales">
-                    <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
+      </nav>
     </header>
 
+  <!-- Slider de Noticias -->
+  <div class="slider">
+    <div class="slider-contenedor" id="sliderContenedor">
+      <!-- Noticias dinámicas aquí -->
+    </div>
+    <button class="slider-anterior" onclick="moverSlider(-1)">&#10094;</button>
+    <button class="slider-siguiente" onclick="moverSlider(1)">&#10095;</button>
+  </div>
 
-    <main class="pagina-internacional">
-        <section class="noticias-destacadas">
-            <h2>Noticias Destacadas</h2>
-            <div id="contenedor-noticias"></div>
-        </section>
+  <!-- Noticias Relacionadas -->
+  <main>
+    <aside>
+      <div class="noticias-relacionadas" id="noticiasRelacionadas">
+        <h2>Noticias Relacionadas</h2>
+        <ul>
+          <li>Cargando...</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
 
-        <section class="noticias-regiones">
-        </section>
-
-        <section class="analisis-opinion">
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-contenedor">
-            <div class="footer-columna">
-                <h3>Secciones</h3>
-                <ul>
-                    <li><a href="noticias.html">Noticias</a></li>
-                    <li><a href="internacional.html">Internacional</a></li>
-                    <li><a href="economia.html">Economía</a></li>
-                </ul>
-            </div>
-            <div class="footer-columna">
-                <h3>Canales</h3>
-                <ul>
-                    <li><a href="#">En Vivo</a></li>
-                </ul>
-            </div>
-            <div class="footer-columna">
-                <h3>Información</h3>
-                <ul>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Contáctenos</a></li>
-                    <li><a href="#">Términos de Uso</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Cookies</a></li>
-                </ul>
-            </div>
-            <div class="footer-columna contacto">
-                <h3>Contacto</h3>
-                <p>123 Calle Principal, Ciudad</p>
-                <p>Teléfono: +1 123 456 7890</p>
-                <p>Email: info@ejemplo.com</p>
-                <div class="redes-sociales">
-                    <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
+  <footer>
+    <div class="footer-contenedor">
+      <div class="footer-columna">
+        <h3>Secciones</h3>
+        <ul>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="internacional.html">Internacional</a></li>
+          <li><a href="economia.html">Economía</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna">
+        <h3>Canales</h3>
+        <ul>
+          <li><a href="#">En Vivo</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna">
+        <h3>Información</h3>
+        <ul>
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Contáctenos</a></li>
+          <li><a href="#">Términos de Uso</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna contacto">
+        <h3>Contacto</h3>
+        <p>123 Calle Principal, Ciudad</p>
+        <p>Teléfono: +1 123 456 7890</p>
+        <p>Email: info@ejemplo.com</p>
+        <div class="redes-sociales">
+          <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <div class="footer-derechos">
-            <p>&copy; 2023 Todos los derechos reservados.</p>
-        </div>
-    </footer>
-     <script src="script.js"></script>
-      
+      </div>
+    </div>
+    <div class="footer-derechos">
+      <p>&copy; 2023 Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS para consumir API y actualizar contenido -->
+  <script>
+    // API alternativa gratuita: NewsData.io
+    const url = 'https://newsdata.io/api/1/news?apikey=pub_87557355af61c3245b1d164782633723c0e6e&language=es&country=mx&category=top';
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const noticias = data.results || data.news || [];
+        const slider = document.getElementById('sliderContenedor');
+        const relacionadas = document.getElementById('noticiasRelacionadas').querySelector('ul');
+
+        // Limpiar
+        slider.innerHTML = '';
+        relacionadas.innerHTML = '';
+
+        // Mostrar noticias en grid visual con imagen, título y resumen
+        slider.innerHTML = '';
+        const grid = document.createElement('div');
+        grid.className = 'noticias-grid';
+        noticias.slice(0, 8).forEach((noticia, i) => {
+          const img = noticia.image_url || noticia.image || 'img/default.jpg';
+          const resumen = noticia.description || noticia.content || '';
+          const link = noticia.link || noticia.url || '#';
+          const card = document.createElement('a');
+          card.className = 'noticia-card';
+          card.href = link;
+          card.target = '_blank';
+          card.innerHTML = `
+            <div class="noticia-img">
+              <img src="${img}" alt="Noticia">
+            </div>
+            <div class="noticia-info">
+              <h3 class="noticia-titulo">${noticia.title || ''}</h3>
+              <p class="noticia-resumen">${resumen}</p>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+        slider.appendChild(grid);
+
+        noticias.forEach((noticia, i) => {
+          const img = noticia.image_url || noticia.image || noticia.image_url || 'img/default.jpg';
+          const fecha = noticia.pubDate ? new Date(noticia.pubDate).toLocaleDateString('es-MX', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+          const categoria = noticia.category ? `<span class='categoria'><i class='fa fa-tag'></i> ${noticia.category}</span>` : '';
+
+          // Noticias relacionadas profesional
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${noticia.link || noticia.url || '#'}" target="_blank">
+              <i class="fa fa-newspaper"></i> ${noticia.title || ''}
+              <span class="relacionada-fecha">${fecha}</span>
+            </a>`;
+          relacionadas.appendChild(li);
+        });
+        // Mostrar primer slide
+        moverSlider(0);
+      })
+      .catch(err => {
+        console.error('Error al obtener noticias:', err);
+      });
+
+    // Slider navegación (opcional simple)
+    let slideIndex = 0;
+    function moverSlider(n) {
+      const slides = document.querySelectorAll('.slider-imagen');
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.style.display = i === slideIndex ? 'block' : 'none';
+      });
+    }
+
+    // Mostrar primer slide al inicio
+    window.onload = () => moverSlider(0);
+  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
